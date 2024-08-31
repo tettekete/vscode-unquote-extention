@@ -1,0 +1,3 @@
+{
+	"unquote.unquote_without_selection.description": "テキストが選択されていなくてもカーソル位置がクォートされたテキスト内にある場合 Unquote を実施する。"
+}

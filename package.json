@@ -1,7 +1,7 @@
 {
   "name": "unquote",
   "displayName": "Unquote",
-  "description": "Unquotes selected text.",
+  "description": "Unquote quoted text",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.92.0"
@@ -12,10 +12,38 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "Unquote",
+      "properties": {
+        "unquote.unquote_without_selection": {
+          "title": "Unquote without selection",
+          "type": "boolean",
+          "default": true,
+          "description": "%unquote.unquote_without_selection.description%"
+        }
+      }
+    },
     "commands": [
       {
-        "command": "unquote.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-unquote.unquote",
+        "title": "Unquote"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "vscode-unquote.unquote",
+          "group": "1_modification"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "vscode-unquote.unquote",
+        "key": "ctrl+shift+7",
+        "mac": "cmd+shift+7",
+        "when": "editorTextFocus"
       }
     ]
   },
