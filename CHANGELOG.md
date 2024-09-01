@@ -1,5 +1,9 @@
 # Change Log
 
-## 2024-09-01
+### v0.0.2
+
+- update docs
+
+### v0.0.1
 
 - Initial release

@@ -1,7 +1,13 @@
 # Unquote
 
 Removes the quotes around the selected text.
+
 By default, if the cursor is within quoted text even if no text is selected, the quotes will be removed. This function can also be disabled in the configuration.
+
+## Default Keybind
+
+- Win: `ctrl` + `shift` + `7`
+- macOS: `cmd` + `shift` + `7`
 
 ## Extension Settings
 
@@ -13,7 +19,6 @@ The default for this setting is enabled.
 
 ## Release Notes
 
-### 0.0.1
+See [CHANGELOG](CHANGELOG.md)
 
-Initial release of Unquote.
 

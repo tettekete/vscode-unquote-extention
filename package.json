@@ -2,7 +2,7 @@
   "name": "unquote",
   "displayName": "Unquote",
   "description": "Unquote quoted text",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "tettekete",
   "author": "tettekete",
   "license": "MIT",
