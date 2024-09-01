@@ -3,6 +3,10 @@
   "displayName": "Unquote",
   "description": "Unquote quoted text",
   "version": "0.0.1",
+  "publisher": "tettekete",
+  "author": "tettekete",
+  "license": "MIT",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tettekete/vscode-unquote-extention"
