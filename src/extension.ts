@@ -3,6 +3,8 @@
 import * as vscode from 'vscode';
 import {QuotedStringWithPos} from './util';
 
+const _message_time_out = 3500;
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -19,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 		{
 			if( ! config.get<boolean>('unquote_without_selection') )
 			{
-				vscode.window.showInformationMessage( "Config unquote_without_selection is false" );
+				vscode.window.setStatusBarMessage( "Unquote: Config unquote_without_selection is false.",_message_time_out );
 				return;
 			}
 			// 選択範囲がないのでカーソル位置を内包するクォートされたテキストを探します
@@ -61,11 +63,13 @@ export function activate(context: vscode.ExtensionContext) {
 					);
 
 					editor.selection = newSelection;
+
+					vscode.window.setStatusBarMessage( "Unquoted!" ,_message_time_out);
 				});
 			}
 			else
 			{
-				vscode.window.showInformationMessage( "Could'nt Unquote." );
+				vscode.window.setStatusBarMessage( "Unquote: Could'nt Unquote." ,_message_time_out);
 			}
 			
 			
@@ -90,11 +94,13 @@ export function activate(context: vscode.ExtensionContext) {
 				{
 					const newSelection = new vscode.Selection(start.translate(0, -1), end.translate(0, -1));
 					editor.selection = newSelection;
+
+					vscode.window.setStatusBarMessage( "Unquoted!",_message_time_out );
 				});
 			}
 			else
 			{
-				vscode.window.showInformationMessage( "Could not Unquote the selection." );
+				vscode.window.setStatusBarMessage( "Unquote: Could not Unquote the selection." ,_message_time_out);
 			}
 		}
 		
