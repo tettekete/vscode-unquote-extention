@@ -8,7 +8,7 @@ import {QuotedStringWithPos} from './util';
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('vscode-unquote.unquote', () =>
 	{
-		const config = vscode.workspace.getConfiguration('vscode-unquote.unquote');
+		const config = vscode.workspace.getConfiguration('unquote');
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {return;}
 
