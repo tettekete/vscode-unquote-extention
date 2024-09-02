@@ -2,7 +2,13 @@
 
 Removes the quotes around the selected text.
 
-By default, if the cursor is within quoted text even if no text is selected, the quotes will be removed. This function can also be disabled in the configuration.
+By default, if the cursor is within quoted text even if no text is selected, the quotes will be removed. The text without the quotes will then be selected, so you can easily change it to different quotes.
+
+You can also disable this function to remove quotes without selecting text in the configuration.
+
+## DEMO
+
+![DEMO](docs/image/Unquote-DEMO.gif)
 
 ## Default Keybind
 
