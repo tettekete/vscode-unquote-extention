@@ -9,6 +9,7 @@ export type QuotedStringWithPosResult_T =
 };
 
 export function QuotedStringWithPos( line: string ,cursor_pos: number )
+	:QuotedStringWithPosResult_T | undefined
 {
 	const analyzed: QuotedStringWithPosResult_T[] = [];
 	let begin_quote: string | undefined = undefined;
@@ -74,10 +75,10 @@ export function QuotedStringWithPos( line: string ,cursor_pos: number )
 
 	if( ! analyzed.length ) {return undefined;}
 
-	const result = analyzed.filter((r) =>
+	const result = analyzed.find((r) =>
 	{
 		return r.start < cursor_pos && (r.end - 1) >= cursor_pos;
-	})[0];
+	});
 
 	return result;
 }
